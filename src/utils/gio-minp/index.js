@@ -200,11 +200,7 @@ const proxyVue = (t, e) => {
       },
       beforeMount: function () {
         let t = this.$root;
-        
-        t.$mp && "page" === t.$mp.mpType ? t.$mp.page && (e.vueRootVMs[t.$mp.page.route] = t) : "page" === t.mpType && "page" === this.mpType && t.$mp.page && (e.vueRootVMs[t.$mp.page.route || t.$mp.page.is] = t
-          ,
-           -1 !== ["wx", "qq", "tt"].indexOf(gioGlobal.gio__platform) && VdsInstrumentAgent.instrumentPageComponent(t.$mp.page)
-           )
+        t.$mp && "page" === t.$mp.mpType ? t.$mp.page && (e.vueRootVMs[t.$mp.page.route] = t) : "page" === t.mpType && "page" === this.mpType && t.$mp.page && (e.vueRootVMs[t.$mp.page.route || t.$mp.page.is] = t, -1 !== ["wx", "qq", "tt"].indexOf(gioGlobal.gio__platform) && VdsInstrumentAgent.instrumentPageComponent(t.$mp.page))
       }
     }), console.log("prox", e.vueRootVMs)
   },
