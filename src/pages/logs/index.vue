@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="bindLogsViewTap">
       <swiper v-if="imgUrls.length > 0" indidator-dots="imgUrls.length > 1" >
       <block v-for="(item, index) in imgUrls" :key="index" >
         <swiper-item>
@@ -24,7 +24,6 @@ export default {
   components: {
     card
   },
-
   data () {
     return {
       logs: [],
@@ -35,8 +34,13 @@ export default {
       ]
     }
   },
+  methods: {
+    bindLogsViewTap () {
+      
+    },
+  },
 
-  created () {
+  onShow () {
     let logs
     if (mpvuePlatform === 'my') {
       logs = mpvue.getStorageSync({key: 'logs'}).data || []

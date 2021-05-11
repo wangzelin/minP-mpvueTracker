@@ -1,7 +1,7 @@
 <template>
-  <div >
+  <div @click="bindIndexViewTap">
 
-    <div class="userinfo" @click="bindViewTap">
+    <div class="userinfo">
       <img class="userinfo-avatar" src="/static/images/user.png" background-size="cover" />
 
       <!-- <div class="userinfo-nickname">
@@ -49,21 +49,12 @@ export default {
   },
 
   methods: {
-    bindViewTap () {
-      const url = '../logs/main?code=123'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      } else {
-        mpvue.navigateTo({ url })
-      }
+    bindIndexViewTap () {
+      
     },
-    clickHandle (ev) {
-      console.log('clickHandle:', ev)
-      // throw {message: 'custom test'}
-    }
   },
 
-  created () {
+  onShow () {
     // let app = getApp()
   }
 }
